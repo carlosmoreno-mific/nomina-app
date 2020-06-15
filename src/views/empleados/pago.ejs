@@ -1,0 +1,29 @@
+<div class=" mb-4 table-responsive-md table-responsive-sm">
+    <table class="table table-hover table-bordered">
+        <thead>
+            <th>Numero de cedula</th>
+            <th>Nombre completo</th>
+            <th>Sueldo base</th>
+            <th>Salud</th>
+            <th>Pension</th>
+            <th>Transporte</th>
+            <th>Total devengado</th>
+            <th>Salario neto</th>
+        </thead>
+        <tbody>
+            <% nomina.forEach(fila => { %>
+                <tr>
+                    <td><%= fila.numeroCedula %></td>
+                    <td><%= fila.nombreCompleto %></td>
+                    <td class="text-right"><%= fila.sueldoBase %></td>
+                    <td class="text-right">(<%= fila.salud %>)</td>
+                    <td class="text-right">(<%= fila.pension %>)</td>
+                    <td class="text-right"><%= fila.transporte %></td>
+                    <td class="text-right"><%= fila.totalDevengado() %></td>
+                    <td class="text-right"><%= fila.salarioNeto() %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    
+    </table>
+</div>

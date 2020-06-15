@@ -1,0 +1,70 @@
+<% if(hasErrors) { %>
+
+<div class="alert alert-success">
+    <% messages.forEach(function(message) { %>
+    <%= message %>
+    <% }) %>
+</div>
+
+<% } %>
+
+<% if(login) { %>
+
+<a class="btn btn-outline-primary mb-4" href="/empleados/crear">Agregar Empleado</a>
+
+<% } %>
+
+
+<div class="row row-cols-3 row-cols-md-3">
+
+    <% if (empleados.length == 0) { %>
+
+    <div class="col-xs-12 col-sm-12 col-md-12 mb-4">
+        <h4 class="text-center text-muted">No hay empleados agregados!</h4>
+    </div>
+
+    <% } else { %>
+
+    <% empleados.forEach(empleado => { %>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 mb-4">
+        <div class="card">
+            <div class="card-header"><a href="/empleados/<%= empleado.IdEmpleado %>"><%= empleado.nombreCompleto %></a>
+            </div>
+            <div class="card-body">
+                <div class="row row-cols-1">
+                    <div class="col-xs-12 col-sm-6 col-md-4 mb-4">
+                        <a href="/empleados/<%= empleado.IdEmpleado %> ">
+                            <img src="https://api.adorable.io/avatars/285/<%= empleado.numeroCedula.substring(empleado.numeroCedula.length - 3, empleado.numeroCedula.length) %> "
+                                alt="" class="rounded img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-8">
+                        <p>
+                            <i class="fas fa-envelope"></i> <%= empleado.correoElectronico %>
+                            <br>
+                            <i class="fas fa-wallet"></i> COP <%= empleado.sueldoBase %>
+                            <br>
+                            <i class="fas fa-id-card"></i> <%= empleado.numeroCedula %>
+                        </p>
+                    </div>
+                </div>
+
+                <% if(login) { %>
+
+                <a href="/empleados/editar/<%= empleado.IdEmpleado %>"
+                    class="card-link btn btn-outline-warning">Editar</a>
+                <!-- <a href="#" class="card-link btn btn-outline-danger">Eliminar</a> -->
+                <form action="/empleados/<%= empleado.IdEmpleado %>?_method=DELETE" method="POST" class="d-inline">
+                    <button type="submit" class="card-link btn btn-outline-danger">Eliminar</button>
+                </form>
+                
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <% }) %>
+    <% } %>
+
+
+</div>

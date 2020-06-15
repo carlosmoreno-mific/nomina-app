@@ -1,0 +1,24 @@
+<div class="form-group">
+    <label for="numeroCedula">Numero de cedula</label>
+    <input required value="<%= empleado.numeroCedula %>" type="text" name="numeroCedula" id="numeroCedula" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="nombreCompleto">Nombre completo</label>
+    <input required value="<%= empleado.nombreCompleto %>" type="text" name="nombreCompleto" id="nombreCompleto" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="sueldoBase">Sueldo base</label>
+    <input required value="<%= empleado.sueldoBase %>" type="number" min="877803" step="any" name="sueldoBase" id="sueldoBase" class="form-control">
+</div>
+
+<div class="form-group">
+    <label for="correoElectronico">Correo electronico</label>
+    <input required value="<%= empleado.correoElectronico %>" type="email" name="correoElectronico" id="correoElectronico" class="form-control">
+</div>
+
+<a href="/empleados" class="btn btn-link">Cancelar</a>
+<button type="submit" class="btn btn-outline-primary">
+    Guardar
+</button>

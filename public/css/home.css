@@ -1,0 +1,58 @@
+body {
+    background: url(../images/bg-home.svg) no-repeat;
+    background-size: auto;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding-bottom: 75px;
+}
+
+
+
+.main {
+    margin-top: 150px;
+}
+
+.container-home {
+    text-align: center;
+    width: 60%;
+    margin: 100px auto;
+    color: #fff;
+}
+
+h1 {
+    font-size: 3.5em;
+    color: #fff;
+}
+
+h3 {
+    text-align: center;
+    margin: 50px auto;
+}
+
+.container-home p {
+    font-size: 1.3em;
+    line-height: 1.4em;
+}
+
+.btn-home {
+    border-radius: 50px;
+}
+
+#cards {
+    margin: 60px auto;
+    padding: 60px auto;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    background-color: #7B2A74;
+    height: 75px;
+    width: 100%;
+}
+
+.footer>.container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
